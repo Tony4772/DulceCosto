@@ -1,0 +1,1 @@
+Versión 1.0: insumos, recetas, merma, IGV, delivery, ganancia y margen.

@@ -1,0 +1,1 @@
+Calcula el costo real de tus recetas y el margen de cada venta.

@@ -1,0 +1,23 @@
+DulceCosto calcula cuánto cuesta un postre y si el precio de venta deja ganancia.
+
+Está hecha para dulcerías, pastelerías y emprendimientos que venden tortas, dulces o porciones y quieren fijar el precio con números claros, sin rehacer una hoja de cálculo cada vez.
+
+Qué puedes hacer
+
+Registra cada insumo con el precio que pagaste, la cantidad comprada y su unidad: gramos, kilos, mililitros, litros, unidades, docenas o centímetros. DulceCosto convierte esa compra al costo por unidad. Un kilo, por ejemplo, pasa al costo de cada gramo.
+
+Arma la receta con su nombre y la cantidad que usas de cada insumo. Puedes elegir una unidad compatible con la de compra. El resumen separa el costo de los ingredientes, la merma de producción y el costo final.
+
+En el precio escribes lo que cobras por esa receta. Si corresponde, activa el IGV y define su porcentaje. También puedes activar la comisión de delivery, como la de Rappi o PedidosYa. La app muestra la ganancia neta, el margen real sobre el precio de venta y el punto de equilibrio: el precio mínimo para no perder.
+
+La moneda de trabajo puede ser el sol peruano u otra moneda de la región, incluido el dólar estadounidense.
+
+Cómo se forma el costo
+
+El costo de los ingredientes es la suma de lo que usa la receta. La merma es un porcentaje de ese costo. Si activas el IGV, se suma al costo. Si activas el delivery, la comisión se calcula sobre el precio de venta. La ganancia es el precio de venta menos el costo total. El margen es esa ganancia dividida entre el precio de venta.
+
+Versión 1.0
+
+Los cálculos se hacen en tu dispositivo. No necesitas crear una cuenta. En esta versión los insumos, la receta y el precio se usan durante la sesión de trabajo.
+
+DulceCosto no reemplaza la asesoría de un contador. Sirve para ver el costo y el margen antes de vender.
