@@ -8,14 +8,13 @@ plugins {
 android {
     namespace = "com.dulcosto.app"
     compileSdk = 37
-    compileSdkMinor = 2
 
     defaultConfig {
         applicationId = "com.ebyzom.dulcecosto"
         minSdk = 24
-        targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 35
+        versionCode = 4
+        versionName = "1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -33,6 +32,7 @@ android {
     }
     buildFeatures { compose = true }
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
+    compileSdkMinor = 2
 }
 
 kotlin {
@@ -44,6 +44,7 @@ kotlin {
 dependencies {
     implementation(platform("androidx.compose:compose-bom:2024.12.01"))
     implementation("androidx.activity:activity-compose:1.10.0")
+    implementation("androidx.fragment:fragment:1.8.6")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")

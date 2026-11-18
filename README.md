@@ -7,7 +7,7 @@ Calculadora de costos de producción para dulcerías peruanas, construida con **
 - Catálogo inicial de insumos con presentación de compra: `1 kg = S/ 4.00` se convierte a `S/ 0.004 por gramo`.
 - Alta y eliminación de insumos.
 - Constructor de receta con cantidades por unidad de medida.
-- Costo de ingredientes, merma, mano de obra y empaque.
+- Costo de ingredientes (incluido el empaque cuando se agrega como insumo), merma y mano de obra.
 - IGV opcional y comisión de delivery opcional.
 - Precio de venta editable, ganancia neta, margen real y punto de equilibrio.
 - Motor de cálculo aislado en `domain/Costing.kt`, con pruebas unitarias.
@@ -18,13 +18,15 @@ Calculadora de costos de producción para dulcerías peruanas, construida con **
 costo unitario = precio de compra / cantidad comprada
 costo ingredientes = suma(costo unitario × cantidad usada)
 merma = costo ingredientes × merma%
-base = ingredientes + merma + mano de obra + empaque
+base = ingredientes + merma + mano de obra
 IGV = base × IGV% (si está activo)
 delivery = precio de venta × comisión% + fijo (si está activo)
 costo total = base + IGV + delivery
 ganancia = precio de venta - costo total
 margen = ganancia / precio de venta
 ```
+
+El empaque se registra en **Insumos** con categoría `Empaque` y se agrega a cada receta en la cantidad que corresponda; no existe un costo de empaque adicional en **Precio**.
 
 ## Ejecutar
 

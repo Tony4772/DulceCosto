@@ -23,7 +23,6 @@ data class RecipeLine(val supplyId: Int, val quantity: Double, val unit: String 
 data class CostSettings(
     val wastePercent: Double = 5.0,
     val labor: Double = 3.50,
-    val packaging: Double = 2.00,
     val taxPercent: Double = 18.0,
     val taxEnabled: Boolean = true,
     val deliveryPercent: Double = 25.0,
@@ -35,7 +34,6 @@ data class CostBreakdown(
     val ingredients: Double,
     val waste: Double,
     val labor: Double,
-    val packaging: Double,
     val tax: Double,
     val delivery: Double,
     val totalCost: Double,
@@ -105,12 +103,12 @@ object CostingEngine {
             supply.costPerUnit * costForQuantity(line.quantity, recipeUnit, supply.unit)
         }
         val waste = ingredients * max(settings.wastePercent, 0.0) / 100.0
-        val base = ingredients + waste + max(settings.labor, 0.0) + max(settings.packaging, 0.0)
+        val base = ingredients + waste + max(settings.labor, 0.0)
         val tax = if (settings.taxEnabled) base * max(settings.taxPercent, 0.0) / 100.0 else 0.0
         val delivery = if (settings.deliveryEnabled) {
             salePrice * max(settings.deliveryPercent, 0.0) / 100.0 + max(settings.deliveryFixed, 0.0)
         } else 0.0
-        return CostBreakdown(ingredients, waste, settings.labor, settings.packaging, tax, delivery, base + tax + delivery, salePrice)
+        return CostBreakdown(ingredients, waste, settings.labor, tax, delivery, base + tax + delivery, salePrice)
     }
 
     fun priceForMargin(costWithoutDelivery: Double, marginPercent: Double): Double {
